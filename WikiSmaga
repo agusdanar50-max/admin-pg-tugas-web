@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiSMAGA - Ensiklopedia SMAGA</title>
+    </head>
+    <style>
+        :root {
+            --primary-color: #3366cc;
+            --secondary-color: #f8f9fa;
+            --text-color: #222;
+            --border-color: #a2a9b1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color:white;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header {
+            background-color: var(--secondary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .search-bar {
+            margin-top: 10px;
+            display: flex;
+        }
+        
+        .search-bar input {
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px 0 0 3px;
+            width: 300px;
+        }
+        
+        .search-bar button {
+            padding: 8px 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: var(--secondary-color);
+            border-right: 1px solid var(--border-color);
+            padding: 1rem;
+            min-height: calc(100vh - 160px);
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+        
+        .sidebar a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            padding: 1rem 2rem;
+            background-color: white;
+            max-width: calc(220% - 220px);
+        }
+        
+        .article-title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            color: #000;
+        }
+    
+        
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem;
+            text-align: center;
+            font-size: 14px;
+            color: #54595d;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .main-content {
+                max-width: 100%;
+            }
+            
+            .search-bar input {
+                width: 100%;
+            }
+        }
+    </style>
+
+  <title>WikiSMAGA</title>
+  <style>
+            header {
+              text-align: center;
+              padding: 20px;
+            }
+
+            .logo {
+              font-size: 28px;
+              font-weight: bold;
+              text-decoration: none;
+              color: black;
+              display: block;
+              margin-bottom: 10px;
+            }
+
+            .search-bar {
+              display: inline-block; 
+            }
+
+            .search-bar input[type="text"] {
+              padding: 8px;
+              width: 200px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            }
+
+            .search-bar button {
+              padding: 8px 12px;
+              border: none;
+              background-color: #2e3ecc;
+              color: white;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+
+            .search-bar button:hover {
+              background-color: #34495e;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+
+            @media (max-width: 768px) {
+                p {
+                    font-size: 14px;
+                }
+            }
+        
+            img {
+              max-width: 100%;
+              height: auto;
+              display: block;
+              margin: 10px 0; 
+              width: 400px;    
+            }
+
+
+            @media (max-width: 768px) {
+              img {
+                margin: 10px auto;  
+                width: 90%;         
+                max-width: 350px;   
+              }
+            }
+
+
+            body {
+              padding: 0 10px;
+            }
+
+
+            .main-content {
+              max-width: 100% !important;
+              padding: 1rem;
+            }
+  </style>
+
+  <header>
+    <a href="#" class="logo">WikiSMAGA</a>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Cari di WikiSMAGA...">
+      <button>Cari</button>
+    </div>
+  </header>
+
+        <div class="container">
+    
+            
+            <main class="main-content">
+                <div class="breadcrumb">
+                    <a href="#">Halaman Utama</a> > <a href="#">Apa Itu SMAGA??</a>
+                </div>
+                
+                <h1 class="article-title">SMA Negeri 3 Surakarta (SMAGA)</h1>
+                <img src="https://mettanews.id/wp-content/uploads/2022/06/427AFB0F-3390-4C39-850D-962B1E131450-scaled.jpeg" >
+              
+                <h2>A. Profil Singkat SMA Negeri 3 Surakarta</h2>
+
+                <li><strong>Nama resmi:</strong> SMA Negeri 3 Surakarta, akrab disebut "SMAGA"</li>
+                <li><strong>Alamat:</strong>  Gedung I: Jl. Laks. R.E. Matadinata 143 (Warungmiri) Gedung II: Jl. Prof W.Z. Yohanes (Kerkoff/Kerkop), Surakarta, Jawa Tengah, Indonesia.</li>
+                <li><strong>Akreditasi:</strong> A</li>
+                <li><strong>Kepala Sekolah:</strong> Mujapar, S.Pd., M.Pd.</li>
+                <li><strong>Kurikulum:</strong> Kurikulum Merdeka.</li>
+                 <li><strong>Nomor Pokok Sekolah Nasional:</strong> 20327968.</li>
+                
+                <h2>B. Sejarah dan Perkembangan</h2>
+
+                <li><strong>Awal pendirian</strong> dimulai pada masa pendudukan Jepang—3 November 1943, dengan nama Sekolah Menengah Tinggi Negeri. (SMT Negeri)</li>
+                <li><strong>Resmi dikenal</strong> sebagai SMA Negeri 3 Surakarta per 1 Agustus 1958.</li>
+                <li><strong>Perpindahan lokasi</strong> dari Margoyudan ke Warung Miri, hingga akhirnya pada 1975 menetap di alamat Jl. Prof. W.Z. Yohannes No. 58 Surakarta.</li>
+
+                <h2>C. Visi dan Misi</h2>
+
+                <strong>Visi:</strong>
+                <p>Menjadi sekolah berwawasan internasional dan lingkungan, membentuk insan unggul dalam akhlak, ilmu, dan perilaku berdasarkan nilai luhur budaya bangsa.</p>
+                <strong>Misi:</strong>
+                
+                <li>Menyelenggarakan pendidikan yang membentuk peserta didik berakhlak mulia, cerdas, dan unggul.</li>
+                <li>Mengembangkan potensi diri siswa untuk meraih prestasi nasional maupun internasional serta menumbuhkan rasa peduli sosial.</li>
+                
+
+                <h2>D. Fasilitas dan Data Sekolah</h2>
+
+                <strong>Berdasarkan data Dapodik:</strong>
+                
+                <li>Luas lahan: Sekitar 13.000 m².</li>
+                <li>Ruang belajar: 36 ruang kelas, 7 laboratorium, 2 perpustakaan, serta 4 unit sanitasi siswa (dalam kondisi baik hingga rusak ringan).</li>
+                <li>Kurikulum: Menggunakan Kurikulum “SMA Merdeka”, dengan sistem pembelajaran 5 hari penuh per minggu.</li>
+                <li>Rombongan belajar (rombel): 36 kelas; rasio siswa per kelas sekitar 34,9.</li>
+                
+                <strong>Data tambahan dari sumber lain (meski ada sedikit perbedaan):</strong>
+                
+                <li>Sekitar 1.071 siswa, 67 guru profesional.</li>
+                <li>Sekolah juga memiliki sertifikasi ISO 9001:2000.</li>
+                
+
+                <h2>E. Organisasi dan Alumni Ternama</h2>
+
+                <strong>Alumni terkenal dari SMAGA di antaranya:</strong>
+                
+                <li><a href="https://id.wikipedia.org/wiki/Dono">Dono</a> (pelawak anggota Warkop DKI).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Heru_Cokro">Heru Cokro</a> (aktivis '98).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Iriana">Iriana</a> (istri Joko Widodo).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Jeihan_Sukmantoro">Jeihan Sukmantoro</a> (seniman).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Rory_Asyari">Rory Asyari</a> (presenter TV nasional).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Didik_Madiyono">Didik Madiyono</a> (Direktur Eksekutif Riset LPS).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Perry_Warjiyo">Perry Warjiyo</a> (Gubernur Bank Indonesia).</li>
+                <li><a href="https://id.wikipedia.org/w/index.php?title=Kunto_wibawa&action=edit&redlink=1">Kunto Wibowo Dasa Nugraha</a> (Sekjen Kementerian Kesehatan).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Sidrotun_Naim">Sidrotun Naim</a> (peneliti).</li>
+                <li><a href="https://id.wikipedia.org/w/index.php?title=Abiyoso_Seno_Aji&action=edit&redlink=1">Abiyoso Seno Aji</a> (perwira tinggi Polri).</li>
+                <li>Prof. Dr. Hartono, dr. , M.Si. (Rektor <a href="https://id.wikipedia.org/wiki/Universitas_Sebelas_Maret">Universitas Sebelas Maret</a>).</li>
+                <li>Oentarto Wibowo (Kepala Pusdiklat dan <a href="https://id.wikipedia.org/wiki/Direktorat_Jenderal_Bea_dan_Cukai">Direktorat Jenderal Bea dan Cukai</a>).</li>
+                <li>Prof. Ir. Endra Joelianto, Ph.D (Guru Besar FTI <a href="https://id.wikipedia.org/wiki/Institut_Teknologi_Bandung">Institut Teknologi Bandung</a>).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Dinda_Nur_Safira">Dinda Nur Safira</a> (3rd Runner Up <a href="https://id.wikipedia.org/wiki/Puteri_Indonesia">Puteri Indonesia</a>).</li>
+                <li>Prof. Dr. Sabar Narimo, M.M., M.Pd. (Guru Besar <a href="https://id.wikipedia.org/wiki/Universitas_Muhammadiyah_Surakarta">Universitas Muhammadiyah Surakarta</a>).</li>
+                <li>Ir. Nandi Julyanto (Presiden Direktur PT Toyota Manufacturing Indonesia).</li>
+                <li>Amam Sukriyanto (Direktur Bisnis Kecil dan Menengah PT Bank Rakyat Indonesia (Persero)) Tbk.</li>
+                <li>Erwin Dimas, S.E., DEA, M.Si. (Staff Ahli <a href="https://id.wikipedia.org/wiki/Kementerian_Perencanaan_Pembangunan_Nasional/Badan_Perencanaan_Pembangunan_Nasional_Republik_Indonesia">Kementerian Perencanaan Pembangunan Nasional/Badan Perencanaan Pembangunan Nasional Republik Indonesia</a>).</li>
+                <li><a href="https://id.wikipedia.org/wiki/Royke_Tumilaar">Royke Tumilaar</a> (Dirut <a href="https://id.wikipedia.org/wiki/Bank_Negara_Indonesia">Bank Negara Indonesia</a>).</li>
+                
+                <strong>Struktur organisasi SMAGA:</strong>
+                
+                <h4>1. MPK</h4>
+                <p>MPK (Musyawarah Perwakilan Kelas) merupakan organisasi yang tugas utamanya untuk mengawasi kinerja daripada OSIS SMAN 3 Surakarta. Posisi MPK sejajar dengan OSIS. Anggota dari organisasi ini merupakan perwakilan dari kelas-kelas yang ada. Setiap kelas wajib mewakilkan 2 anggota kelasnya untuk menjadi anggota MPK. Calon anggota MPK dipilih melalui musyawarah kelas, sehingga terpilih 2 orang yang dianggap pantas untuk menjadi anggota MPK.</p>
+                <p>MPK Smaga memiliki 4 komisi, yaitu: Komisi A; Komisi B; Komisi C; dan Komisi D. Setiap komisi memiliki tugas masing masing.</p>
+                <h4>2. OSIS</h4>
+                <p>Organisasi Siswa Intra Sekolah (OSIS) merupakan organisasi siswa SMAN 3 Surakarta, di mana organisasi ini memiliki posisi yang sejajar dengan MPK. Organisasi ini membawahi ke-16 Subsie yang ada di SMAN 3 Surakarta.</p>
+                
+
+                <h2>F. Prestasi</h2>
+
+                <strong>SMAGA dikenal sebagai salah satu SMA unggulan di Solo, dan aktif dalam: </strong>
+                <li>Olimpiade Sains (OSN) tingkat kota, provinsi, dan nasional.</li>
+                <li>Lomba debat Bahasa Indonesia & Inggris.</li>
+                <li>Kegiatan KIR (Kelompok Ilmiah Remaja).</li>
+                <li>FLS2N (Festival & Lomba Seni Siswa Nasional).</li>
+                <li>Kompetisi olahraga dan seni antar sekolah.</li>
+                <li>Memiliki agen antiperundungan dari siswa kelas X–XI guna meningkatkan etika dan integritas antar siswa.</li>
+               
+                <h2>G. Esktrakulikuler</h2>
+
+                <strong>SMA Negeri 3 Surakarta memiliki banyak kegiatan ekstrakurikuler atau biasa disebut dengan "subsie", di antaranya:</strong>
+                
+                <li>Kerohanian Islam (Rohis).</li>
+                <li>Kerohanian Kristen (Rokris).</li>
+                <li>Kerohanian Katolik (Rokat).</li>
+                <li>Pecinta Alam SMA 3 (Palasmaga).</li>
+                <li>Palang Merah Remaja (PMR).</li>
+                <li>Patroli Keamanan Sekolah (PKS).</li>
+                <li>Pasukan Tujuh Belas (Pasjub).</li>
+                <li>Administrator.</li>
+                <li>Pramuka (Dewan Ambalan).</li>
+                <li>Olahraga (Sepak Bola, Basket, Voli, Futsal, Taekwondo dll ).</li>
+                <li>Kelompok Ilmiah Remaja (KIR).</li>
+                <li>Kesenian Nasional (Paduan Suara, Tari, Modern Dance, Band Etnik, dan Karawitan).</li>
+                <li>Smaga English Club (SMEC).</li>
+                <li>Koperasi Siswa (Kopsis).</li>
+                <li>Study Teater HOHA.</li>
+                <li>Wikarya.</li>
+
+                <h2>H. Motto dan mars SMAGA</h2>
+
+                <strong>Motto SMAGA adalah "Widya Karma Jaya" yang berarti:</strong>
+                <li>Widya (Vidya): Berarti ilmu pengetahuan, kebijaksanaan, atau pengetahuan.</li>
+                <li>Karma: Berarti perbuatan, tindakan, atau hasil dari perbuatan.</li>
+                <li>Jaya: Berarti kemenangan, kejayaan, atau keberhasilan.</li>
+                <style>
+                .video-container {
+                  position: relative;
+                  width: 100%;
+                  max-width: 600px;
+                  padding-bottom: 56.25%;
+                  height: 0;
+                  overflow: hidden;
+                }
+
+                .video-container iframe {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                @media (max-width: 768px) {
+                  .video-container {
+                    max-width: 100%;
+                  }
+                }
+                </style>
+                <h3>Mars Smaga</h3>
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/r9WcjHVOg7Y"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <div style="clear: both;"></div>
+                <strong>Lirik:</strong>
+                <p>Derap langkah derap ksatria.</p>
+                <p>SMA 3 Surakarta.</p>
+                <p>Genderang Widya Karma Jaya Sakti.</p>
+                <p>Siap berbakti.</p>
+                <p>Mengabdi negara Pancasila.</p>
+                <p>Membina mencerdaskan bangsa.</p>
+                <p>Menjadi manusia Indonesia seutuhnya.</p>
+                <p>Gagah perwira.</p>
+                <p>Sehat mental lincah terampil bekerja.</p>
+                <p>Terpadu bersatu.</p>
+                <p>Pasti langkah generasi baru.</p>
+                <p>Pandu ibuku.</p>
+                <p>Membangun purna widya.</p>
+                <p>Pengawal Indonesia.</p>
+
+                <h2>I. Hubungi</h2>
+                
+                <li><strong>Telepon:</strong> (0271) 648681; (0271) 656851.</li>
+                <li><strong>Situs web:</strong></li>  
+                <p><a href="https://www.sman3-slo.sch.id/">https://www.sman3-slo.sch.id/</a>
+                <li><strong>Instagram:</strong></li></p>
+                <p><a href="https://www.instagram.com/sman3surakarta/">https://www.instagram.com/sman3surakarta/</a></p>
+
+                <h2>J. Cerita Alumni</h2>
+                <p>"Saya memiliki pengalaman yang luar biasa selama 3 tahun bersekolah di SMA Negeri 3 Surakarta. Sarana pembelajaran yang memadai serta para guru yang selalu memberi motivasi mendukung para siswa untuk meraih banyak prestasi sesuai dengan bakat dan minatnya masing-masing. Sukses selalu SMAGA Solo." </p>
+                <p>— <em>Faiq Pramatya Murdiyanto</em></p>
+                <p>"SMAN 3 Surakarta sangat bagus dan memiliki fasilitas yang lengkap sekali. Guru-guru di SMAN 3 Surakarta berkompeten dalam mengajar dan sabar saat menghadapi murid-muridnya, bisa dilihat dari alumni-alumni smaga yang melanjutkan pendidikan ke ptn favorit. Subsie di smaga juga banyak dan aktif-aktif sehingga kita dapat melatih kemampuan dan mencetak prestasi di luar akademis. Saya sangat bangga dan bersyukur menjadi bagian dari SMAGA."</p>
+                <p>— <em>Athaya Queenisya</em></p>
+              
+
+              
+                <h2>K. Peta Lokasi</h2>
+                <iframe
+                src="https://www.google.com/maps?q=-7.5647,110.8406&hl=id&z=17&output=embed" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #2e3ecc;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .komentar {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+
+    .komentar-item {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ccc;
+    }
+
+    .komentar-item strong {
+      color: #2c3e50;
+    }
+</style>
+
+  <h2>Tinggalkan Komentar</h2>
+
+<form id="form-komentar">
+  <label for="nama">Nama:</label>
+  <input type="text" id="nama" required>
+
+  <label for="pesan">Komentar:</label>
+  <textarea id="pesan" rows="4" required></textarea>
+
+  <button type="submit">Kirim</button>
