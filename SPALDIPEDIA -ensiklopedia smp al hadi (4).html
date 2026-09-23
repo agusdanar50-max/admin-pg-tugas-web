@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPALDIPEDIA</title>
+  <style>
+
+    
+    :root {
+      --primary-color: #27ae60;  
+      --secondary-color: #eafaf1; 
+      --text-color: #222;
+      --border-color: #a2a9b1;
+      --dark-green: #1e8449;
+    }
+
+    body {
+      font-family: 'Helvetica';
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: #f8fff9;
+      padding: 0 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--dark-green);
+      background-color: #c8f7dc;
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .search-bar {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: var(--dark-green);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 15px auto;
+      width: 400px;
+    }
+
+  
+    .accordion {
+      background-color: var(--primary-color);
+      color: #fff;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+      border-radius: 6px;
+    }
+    .accordion:hover, .accordion.active {
+      background-color: var(--dark-green);
+    }
+    .panel {
+      padding: 15px;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    
+    h2 {
+      margin-top: 30px;
+      color: var(--dark-green);
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button.kirim {
+      padding: 10px 20px;
+      border: none;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.kirim:hover {
+      background-color: var(--dark-green);
+    }
+    .komentar {
+      margin-top: 20px;
+      border-top: 2px solid var(--primary-color);
+      padding-top: 10px;
+    }
+    .komentar-item {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ccc;
+    }
+    .komentar-item strong {
+      color: var(--dark-green);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      border-top: 2px solid var(--primary-color);
+      padding: 1rem;
+      text-align: center;
+      font-size: 14px;
+      color: var(--dark-green);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">SPALDIPEDIA</a>
+    <div class="search-bar">
+      <input type="text" placeholder="cari...">
+      <button>Cari</button>
+    </div>
+    <div class="separator"> 
+      <img src="https://smpislamalhadi-mojolaban.sch.id/wp-content/uploads/2022/10/WhatsApp-Image-2022-08-29-at-10.16.48-1-scaled.jpeg" alt="SMP Al Hadi Mojolaban"/>
+    </div> 
+  </header>
+
+  <p>
+    SPALDIPEDIA adalah sebuah wiki yang memuat beberapa informasi mengenai SMP Islam Al Hadi Mojolaban,
+    website ini merupakan website wiki fanmade dari alumni SMP tersebut. Disebut juga SPALDI yaitu singkatan dari SMP Islam Al Hadi.
+  </p>
+
+  
+  <button class="accordion">A. PROFIL SINGKAT SEKOLAH</button>
+  <div class="panel">
+    <ol>
+      <li><strong>NAMA SEKOLAH MENENGAH</strong> : SMP Islam Al Hadi Mojolaban</li>
+      <li><strong>ALAMAT</strong> : Jl. Raya Solo-Tawangmangu, Kebakan, Sapen, Mojolaban, Sukoharjo, Jawa Tengah</li>
+      <li><strong>AKREDITASI</strong> : "A"</li>
+      <li><strong>KEPALA SEKOLAH</strong> : Riyan Wik Irawan, S.Pd., M.Pd</li>
+      <li><strong>NPSN</strong> : 20310737</li>
+    </ol>
+  </div>
+
+  
+  <button class="accordion">B. VISI DAN MISI</button>
+  <div class="panel">
+    <p><b>Visi:</b> unggul dalam prestasi, berakhlakul karimah, peduli lingkungan, dan menguasai iptek</p>
+    <p><b>Misi:</b></p>
+    <ol>
+      <li>Unggul dalam akademik dan non akademik</li>
+      <li>Meningkatkan kualitas pendidikan</li>
+      <li>Mencetak peserta didik cerdas, beriman, bertaqwa</li>
+      <li>Menjadi sekolah terpercaya</li>
+      <li>Menanamkan nilai-nilai Islam</li>
+      <li>Mengembangkan sikap religius</li>
+      <li>Menanamkan kepedulian sosial dan lingkungan</li>
+      <li>Mewujudkan lingkungan sekolah yang bersih, rapi dan nyaman</li>
+    </ol>
+  </div>
+
+  <button class="accordion">C.Program Unggulan/Khusus</button>
+  <div class="panel">
+    <ul>
+      <li>1. PROGRAM TAHFIDZ  </li> 
+       <p>disini anak didik akan lebih ditekankan pada target hafalanya yang nanti targetnya pas lulus bisa hafal 3 juz </p> 
+      <li>2. PROGRAM SAINS  </li> 
+       <p>ini adalah sebuah program khusus yg paling banyak digemari,ini adalah sebuah program yg dimana anak didik akan diajar kan berbagai hal di bidang sains yaitu seperti KIR dan coding,</p>
+     </ul>
+     </div>  
+
+  
+  <button class="accordion">D. KEGIATAN SEKOLAH</button>
+  <div class="panel">
+    <ul>
+      <li>Study tour</li>
+      <li>Ekstrakurikuler: Pramuka, Paskibra, Olahraga seperti basket,sepak bola,futsal,voli dan lain sebagainya </li>
+      <li>Kegiatan Keagamaan Islami seperti: Kajian Ahad pagi, pelajaran tahfidz mingguan, dan muhaddoroh setiap Sabtu</li>
+    </ul>
+  </div>
+
+  
+  <button class="accordion">E. FASILITAS SEKOLAH</button>
+  <div class="panel">
+    <ul>
+      <li>Kelas program khusus tahfidz dan sains</li>
+      <li>AC di setiap kelas</li>
+      <li>Proyektor LCD di setiap kelas</li>
+      <li>Kantin</li>
+      <li>Laboratorium Komputer</li>
+      <li>Laboratorium IPA</li>
+      <li>Lapangan futsal</li>
+      <li>TV Android di kelas  program khusus</li>
+    </ul>
+  </div>
+
+  
+
+    <button class="accordion">F. MARS SMP ISLAM AL HADI</button>
+  <div class="panel">
+    <ul>
+      <div><div class="separator" style="clear: both; text-align: center;"><iframe allowfullscreen="" class="BLOG_video_class" height="294" src="https://www.youtube.com/embed/ViIZZt1CuuY" width="482" youtube-src-id="ViIZZt1CuuY"></iframe></div><div style="background-color: white; color: #757575; font-family: Roboto, sans-serif; font-size: 15px;"><br /></div>
+      <h4 style="background-color: white; font-family: Roboto, sans-serif; font-size: 15px;">LIRIK MARS SMP:</h4><h4 style="background-color: white; font-family: Roboto, sans-serif; font-size: 15px;"><div style="font-weight: 400;">pelajar smp islam al hadi di Sukoharjo nan makmur</div><div style="font-weight: 400;">giat belajar ilmu dan agama, mencerdaskan bangsa tercita</div><div style="font-weight: 400;">dengan al quran dan al hadist jiwamu majukan amal ilmu</div><div style="font-weight: 400;">pantang menyerah jangan lah ragu capai lah cita cita mu</div><div style="font-weight: 400;">berdoa berusaha dan bersabar giat berbudi dan ber amal</div><div style="font-weight: 400;">satukan lah jiwa kita bersama bela agama dan bangsa</div><div style="font-weight: 400;">bangkit mengabdi untuk ibu pertiwi dengan berkah ridha ilahi</div><div style="font-weight: 400;">jangan bimbang dan ragu ayo lah maju al hadi Sukoharjo makmur</div></h4><p></p></div><p></p>
+    </ul>
+  </div>
+
+  
+  <!--shoutout ke arva untuk ngasih dan ngajari kode untuk fitur komentar :)--> 
+    
+
+  
+  <h2>Tinggalkan Komentar</h2>
+  <form id="form-komentar">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" required>
+    <label for="pesan">Komentar:</label>
+    <textarea id="pesan" rows="4" required></textarea>
+    <button type="submit" class="kirim">Kirim</button>
+  </form>
+
+  <div id="daftar-komentar" class="komentar"></div>
+
+  <footer>
+    <h4>by: Habibi Muhammad Yunanto , Kelas XE-12 <br> dibuat dengan vscode selama 6 jam (kira kira) </h4>
+    <h5>terimakasih arva sudah ngajarin HTML yang lebih lanjut </h5>
+    <h5>SPECIAL THANKS : MIMO , <a href="https://smpislamalhadi-mojolaban.sch.id/">laman resmi smp islam alhadi</a> dan tentu saja VScode </h5>
+  </footer>
+
+  <script>
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+
+  
+  const form = document.getElementById("form-komentar");
+  const daftarcomment = document.getElementById("daftar-komentar");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nama = document.getElementById("nama").value;
+    const pesan = document.getElementById("pesan").value;
+
+    
+    const now = new Date();
+    const waktu = now.toLocaleString("id-ID", {
+      dateStyle: "short",
+      timeStyle: "short"
+    });
+
+    const comment = document.createElement("div");
+    comment.classList.add("komentar-item");
+    comment.innerHTML = `<strong>${nama}</strong> <em style="color:gray;font-size:12px;">(${waktu})</em><p>${pesan}</p>`;
+    daftarcomment.appendChild(comment);
+    form.reset();
+  });
+</script>
+</body>
+</html>
+
+
