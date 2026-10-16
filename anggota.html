@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Anggota | ADMINISTRATOR SMAGA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            width: min(92%, 1200px);
+            margin: 0 auto;
+        }
+
+        /* Navbar */
+        header {
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .logo-area:hover {
+            color: #38bdf8;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #38bdf8;
+        }
+
+        /* Header Halaman */
+        .page-header {
+            padding: 60px 0 40px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid #1e293b;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Anggota Grid Section */
+        .anggota-section {
+            padding: 40px 0 80px;
+        }
+        .angkatan-title {
+            font-size: 1.5rem;
+            color: #38bdf8;
+            margin: 50px 0 25px;
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 10px;
+        }
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        
+        /* Member Card dengan Foto Anonim */
+        .member-card {
+            background-color: #1e293b;
+            padding: 25px 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+        .anon-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #0f172a;
+            border: 2px solid #334155;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+        .anon-photo svg {
+            width: 35px;
+            height: 35px;
+            fill: currentColor;
+        }
+        .member-card h4 {
+            color: #f1f5f9;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            line-height: 1.3;
+        }
+        .member-card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+        .member-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 2rem; }
+            .member-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .member-card { padding: 20px 15px; }
+            .member-card h4 { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- Tombol kembali langsung diarahkan ke index.html -->
+                <a href="index.html" class="logo-area">
+                    &larr; KEMBALI KE BERANDA
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="#" class="active">Anggota</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header Halaman -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Direktori Anggota</h1>
+            <p>Daftar lengkap anggota Administrator SMAGA Angkatan 16, 17, dan 18.</p>
+        </div>
+    </section>
+
+    <!-- Section Data Anggota -->
+    <section class="container anggota-section">
+
+        <!-- Template Foto Anonim (SVG) -->
+        <svg style="display: none;">
+            <symbol id="icon-user" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </symbol>
+        </svg>
+
+        <!-- ANGKATAN 18 -->
+        <h3 class="angkatan-title">Angkatan 18</h3>
+        <div class="member-grid">
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Jasmine Andrea Putri R.</h4><p>X-E2</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Amirah Nasywa Al'yafi</h4><p>X-E12</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Meutia Faradyna Mulyadi</h4><p>X-E12</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Sofiyah Yasmin</h4><p>X-E12</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Muna Azizah</h4><p>X-E10</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Audrey Putri Melisa</h4><p>X-E1</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Ashyfa Safira Adinda</h4><p>X-E1</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Zahra Nur Fathiyya</h4><p>X-E7</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aila Syauqina Azzahra T.</h4><p>X-E3</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Nasywa Putri Mahira</h4><p>X-E10</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Asyifa Zahidah</h4><p>X-E1</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Syifa Kamilanisa</h4><p>X-E3</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Azka Felicia Binar V.</h4><p>X-E12</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Danar Tri Agus Novianto</h4><p>X-E1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Edwin Jordan William</h4><p>X-E1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Maximilliano Jaydon J.E.</h4><p>X-E2</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Brigita Jesline Saptania</h4><p>X-E2</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Jovan Cristiano Setiawan</h4><p>X-E3</p><span class="member-badge">Jurnalistik</span></div>
+        </div>
+
+        <!-- ANGKATAN 17 -->
+        <h3 class="angkatan-title">Angkatan 17</h3>
+        <div class="member-grid">
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Angga Pratama</h4><p>XI-F4</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Adelia Callysta Putri</h4><p>XI-F4</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Adriel Brian Bagustama</h4><p>XI-F1</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aswin Apta Ady D.</h4><p>XI-F2</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Gilang Rivalinov Tri C.</h4><p>XI-F8</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Fauzan Ahnaf Ma'rufi</h4><p>XI-F2</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Daninggar Madi Putri</h4><p>XI-F3</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Habibi Muhammad Y.</h4><p>XI-F2</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Arfa Al Ghifari Prabowo</h4><p>XI-F3</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Yuma Asyhari</h4><p>XI-F1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Amira Qonita Safaraz</h4><p>XI-F2</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Naufall Nizaar Saputra</h4><p>XI-F1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Dhafino Satria Pradana</h4><p>XI-F1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Djangkep Geraldo Sahadi</h4><p>XI-F5</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aqila Putri Ricona</h4><p>XI-F3</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Salsabila Putri Nania</h4><p>XI-F1</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Sarifa Noor Asteri</h4><p>XI-F3</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Muhammad Farras</h4><p>XI-F3</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aurello Orlin Gaviota</h4><p>XI-F5</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Albert Anastasius S.</h4><p>XI-F12</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Keisha Abelia Putri</h4><p>XI-F1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Deni Putra Tiksa</h4><p>XI-F5</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Davin Arya Ramadhan</h4><p>XI-F3</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>M. Justin Bintang K.</h4><p>XI-F5</p><span class="member-badge">Desain Grafis</span></div>
+        </div>
+
+        <!-- ANGKATAN 16 -->
+        <h3 class="angkatan-title">Angkatan 16</h3>
+        <div class="member-grid">
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Regina Freya Nathniela</h4><p>XII-F6</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Anastasia Novena M. R.</h4><p>XII-F8</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aira Zigni Azzahro</h4><p>XII-F8</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Cecilia Sita Ajeng L.</h4><p>XII-F10</p><span class="member-badge">Jurnalistik</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aulia Azka Mahaswari</h4><p>XII-F1</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Arsatria Farhan C. R.</h4><p>XII-F2</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Aisha Musika Marella</h4><p>XII-F1</p><span class="member-badge">Desain Grafis</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>William Reagan Hartanto</h4><p>XII-F1</p><span class="member-badge">Programming</span></div>
+            <div class="member-card"><div class="anon-photo"><svg><use href="#icon-user"></use></svg></div><h4>Indira Daniswara H.</h4><p>-</p><span class="member-badge">-</span></div>
+        </div>
+
+    </section>
+
+</body>
+</html>
