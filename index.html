@@ -112,6 +112,16 @@
             flex-wrap: wrap;
             gap: 14px;
         }
+        .btn-primary {
+            background-color: #f59e0b;
+            color: #0f172a;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+            border: 2px solid #f59e0b;
+        }
+        .btn-primary:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
         .btn-instagram,
         .btn-youtube,
         .btn-facebook {
@@ -153,14 +163,9 @@
             text-decoration: none;
             transition: transform 0.3s, border-color 0.3s;
         }
-        .div-card:hover,
-        .div-card:focus-visible {
+        .div-card:hover {
             transform: translateY(-5px);
             border-color: #38bdf8;
-        }
-        .div-card:focus-visible {
-            outline: 2px solid #38bdf8;
-            outline-offset: 3px;
         }
         .div-icon {
             font-size: 2rem;
@@ -225,8 +230,6 @@
             .hero p { font-size: 1.05rem; }
             .divisions-section { padding: 44px 0; }
             .section-title { font-size: 1.75rem; margin-bottom: 28px; }
-            .divisions-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-            .div-card { padding: 24px; }
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
@@ -238,17 +241,6 @@
             }
             footer { margin-top: 48px; padding-top: 32px; }
             .footer-content { flex-direction: column; text-align: center; }
-        }
-        @media (max-width: 420px) {
-            .hero { padding: 52px 0 40px; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
-            .hashtag { font-size: 0.8rem; }
-            .section-title { font-size: 1.5rem; }
-            .div-card { padding: 20px; }
-            .div-card h3 { font-size: 1.25rem; }
-            .div-card p { font-size: 0.9rem; }
-            .hero-actions .btn { padding: 12px 18px; }
         }
     </style>
 </head>
@@ -264,7 +256,6 @@
                 <ul class="nav-links">
                     <li><a href="#" class="active">Beranda</a></li>
                     <li><a href="#divisi">Divisi</a></li>
-                    <!-- Tautan ke Halaman Anggota -->
                     <li><a href="anggota.html">Anggota</a></li>
                     <li><a href="https://sman3-slo.sch.id/" target="_blank">SMAN 3 SKA</a></li>
                 </ul>
@@ -278,9 +269,11 @@
             <h1>ADMINISTRATOR SMAGA</h1>
             <p>Organisasi Teknologi Informasi & Komunikasi resmi SMA Negeri 3 Surakarta yang mengelola portal digital, jurnalistik, serta media kreatif sekolah.</p>
             <div class="hero-actions">
-                <a href="https://www.instagram.com/adminsmaga/" target="_blank" rel="noopener noreferrer" class="btn btn-instagram">Kunjungi Instagram Admin</a>
-                <a href="https://www.facebook.com/p/Administrator-Smaga-100063067727322/" target="_blank" rel="noopener noreferrer" class="btn btn-facebook">Kunjungi Facebook Admin</a>
-                <a href="https://youtube.com/@administratorsmaga3364?si=0BDfOEh_OyTd3XZL/" target="_blank" rel="noopener noreferrer" class="btn btn-youtube">Kunjungi YouTube Admin</a>
+                <!-- Tombol ke halaman anggota (Jelas terlihat di HP) -->
+                <a href="anggota.html" class="btn btn-primary">Lihat Daftar Anggota</a>
+                <a href="https://www.instagram.com/adminsmaga/" target="_blank" class="btn btn-instagram">Instagram Admin</a>
+                <a href="https://www.facebook.com/p/Administrator-Smaga-100063067727322/" target="_blank" class="btn btn-facebook">Facebook Admin</a>
+                <a href="https://youtube.com/@administratorsmaga3364" target="_blank" class="btn btn-youtube">YouTube Admin</a>
             </div>
         </div>
     </section>
